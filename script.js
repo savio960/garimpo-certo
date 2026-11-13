@@ -1,10 +1,13 @@
-// CATÁLOGO GARIMPO CERTO - TOP MAIS VENDIDOS NO BRASIL (2026)
-// Os 4 primeiros já estão com seus links reais do Mercado Livre!
+// ==========================================================================
+// CATÁLOGO GARIMPO CERTO - MERCADO LIVRE & SHOPEE
+// Para adicionar um produto da Shopee, basta copiar um bloco { ... }
+// e colocar: loja: "shopee"
+// ==========================================================================
 
 const produtos = [
-    // --- SEUS 4 PRODUTOS COM LINKS REAIS ---
     {
         id: 1,
+        loja: "mercadolivre",
         titulo: "Fone de Ouvido Bluetooth Pro 4 com Case Carregador",
         categoria: "tech",
         categoriaNome: "Tecnologia & Setup",
@@ -14,6 +17,7 @@ const produtos = [
     },
     {
         id: 2,
+        loja: "mercadolivre",
         titulo: "Creatina Monohidratada Growth Supplements 250g",
         categoria: "esporte",
         categoriaNome: "Esporte & Saúde",
@@ -23,6 +27,7 @@ const produtos = [
     },
     {
         id: 3,
+        loja: "mercadolivre",
         titulo: "Kit Ferramentas 46 Peças Jogo Chaves Catraca e Soquetes",
         categoria: "casa",
         categoriaNome: "Casa & Ferramentas",
@@ -32,6 +37,7 @@ const produtos = [
     },
     {
         id: 4,
+        loja: "mercadolivre",
         titulo: "Kit 4 Camisetas Dry-fit Sandrini Masculina Academia",
         categoria: "esporte",
         categoriaNome: "Esporte & Saúde",
@@ -39,10 +45,9 @@ const produtos = [
         imagem: "https://http2.mlstatic.com/D_NQ_NP_2X_626928-MLB82004918446_022025-F-kit-4-camiseta-dry-fit-sandrini-masculina-academia-caminhada.webp",
         linkAfiliado: "https://meli.la/2TMH32Z"
     },
-
-    // --- CAMPEÕES DE VENDA NO BRASIL (GERE SEUS LINKS MELI.LA E COLE ABAIXO) ---
     {
         id: 5,
+        loja: "mercadolivre",
         titulo: "Parafusadeira e Furadeira de Impacto Sem Fio 21V com Maleta",
         categoria: "casa",
         categoriaNome: "Casa & Ferramentas",
@@ -52,6 +57,7 @@ const produtos = [
     },
     {
         id: 6,
+        loja: "mercadolivre",
         titulo: "Mini Projetor Portátil Smart Full HD Cinema em Casa",
         categoria: "tech",
         categoriaNome: "Tecnologia & Setup",
@@ -61,6 +67,7 @@ const produtos = [
     },
     {
         id: 7,
+        loja: "mercadolivre",
         titulo: "Aspirador de Pó Vertical Portátil 2 em 1 Alta Potência",
         categoria: "casa",
         categoriaNome: "Casa & Ferramentas",
@@ -70,6 +77,7 @@ const produtos = [
     },
     {
         id: 8,
+        loja: "mercadolivre",
         titulo: "Microfone de Lapela Sem Fio Duplo para Celular (USB-C / iPhone)",
         categoria: "tech",
         categoriaNome: "Tecnologia & Setup",
@@ -79,6 +87,7 @@ const produtos = [
     },
     {
         id: 9,
+        loja: "mercadolivre",
         titulo: "Creme Multirreparador La Roche-Posay Cicaplast Baume B5+",
         categoria: "beleza",
         categoriaNome: "Beleza & Cuidado",
@@ -88,6 +97,7 @@ const produtos = [
     },
     {
         id: 10,
+        loja: "mercadolivre",
         titulo: "Kit 10 Potes de Vidro Herméticos com Trava para Marmita",
         categoria: "casa",
         categoriaNome: "Casa & Ferramentas",
@@ -97,6 +107,7 @@ const produtos = [
     },
     {
         id: 11,
+        loja: "mercadolivre",
         titulo: "Máquina de Cortar Cabelo e Barba Acabamento Profissional",
         categoria: "beleza",
         categoriaNome: "Beleza & Cuidado",
@@ -106,6 +117,7 @@ const produtos = [
     },
     {
         id: 12,
+        loja: "mercadolivre",
         titulo: "Whey Protein Concentrado 1kg (Growth / Max Titanium)",
         categoria: "esporte",
         categoriaNome: "Esporte & Saúde",
@@ -113,21 +125,36 @@ const produtos = [
         imagem: "https://http2.mlstatic.com/D_NQ_NP_2X_809217-MLA113731936580_072026-F.webp",
         linkAfiliado: "https://meli.la/2hzASUq"
     }
+
+    /* QUANDO QUISER ADICIONAR UM PRODUTO DA SHOPEE, REMOVA O /* E * / E PREENCHA:
+    ,{
+        id: 13,
+        loja: "shopee",
+        titulo: "Nome do Produto da Shopee",
+        categoria: "casa",
+        categoriaNome: "Casa & Ferramentas",
+        descricao: "Descrição curta e persuasiva do produto.",
+        imagem: "COLE_AQUI_O_LINK_DA_IMAGEM_DA_SHOPEE",
+        linkAfiliado: "https://s.shopee.com.br/SEU_LINK_AQUI"
+    }
+    */
 ];
 
 const productsGrid = document.getElementById('productsGrid');
 const searchInput = document.getElementById('searchInput');
 const filterBtns = document.querySelectorAll('.filter-btn');
+const storeBtns = document.querySelectorAll('.store-btn');
 const productCount = document.getElementById('productCount');
 
 let categoriaAtual = 'todos';
+let lojaAtual = 'todas';
 
 function renderizarProdutos(lista) {
     productsGrid.innerHTML = '';
     productCount.textContent = `${lista.length} ${lista.length === 1 ? 'achado encontrado' : 'achados encontrados'}`;
 
     if (lista.length === 0) {
-        productsGrid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #64748b; padding: 30px;">Nenhum produto encontrado com esse termo.</p>';
+        productsGrid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #64748b; padding: 30px;">Nenhum produto encontrado com esses filtros.</p>';
         return;
     }
 
@@ -135,14 +162,20 @@ function renderizarProdutos(lista) {
         const card = document.createElement('div');
         card.className = 'product-card';
 
+        const nomeLoja = produto.loja === 'shopee' ? 'Shopee' : 'Mercado Livre';
+        const textoBotao = produto.loja === 'shopee' ? 'Ver na Shopee' : 'Ver no Mercado Livre';
+
         card.innerHTML = `
             <img src="${produto.imagem}" alt="${produto.titulo}" class="product-img" loading="lazy">
             <div class="product-info">
-                <span class="product-badge">${produto.categoriaNome}</span>
+                <div class="badges-row">
+                    <span class="product-badge">${produto.categoriaNome}</span>
+                    <span class="store-tag ${produto.loja}">${nomeLoja}</span>
+                </div>
                 <h3 class="product-title">${produto.titulo}</h3>
                 <p class="product-desc">${produto.descricao}</p>
-                <a href="${produto.linkAfiliado}" target="_blank" rel="nofollow sponsored noopener" class="btn-buy">
-                    Ver no Mercado Livre
+                <a href="${produto.linkAfiliado}" target="_blank" rel="nofollow sponsored noopener" class="btn-buy ${produto.loja}">
+                    ${textoBotao}
                 </a>
             </div>
         `;
@@ -154,14 +187,24 @@ function filtrarProdutos() {
     const termoBusca = searchInput.value.toLowerCase();
 
     const filtrados = produtos.filter(produto => {
+        const bateLoja = lojaAtual === 'todas' || produto.loja === lojaAtual;
         const bateCategoria = categoriaAtual === 'todos' || produto.categoria === categoriaAtual;
         const bateTexto = produto.titulo.toLowerCase().includes(termoBusca) || 
                           produto.descricao.toLowerCase().includes(termoBusca);
-        return bateCategoria && bateTexto;
+        return bateLoja && bateCategoria && bateTexto;
     });
 
     renderizarProdutos(filtrados);
 }
+
+storeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        storeBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        lojaAtual = btn.getAttribute('data-store');
+        filtrarProdutos();
+    });
+});
 
 filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
