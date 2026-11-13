@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garimpo Certo | Ofertas Selecionadas e Reviews Sinceros</title>
+    <meta name="description" content="Curadoria diária dos melhores produtos e ofertas reais no Mercado Livre. Economize tempo e compre com segurança.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo-container">
+                <!-- Coloque sua logo na pasta 'assets/logo.png'. Se não existir ainda, aparece o texto abaixo -->
+                <img src="assets/logo.png" alt="Logo Garimpo Certo" class="site-logo" onerror="this.style.display='none'; document.getElementById('logoText').style.display='block';">
+                <span id="logoText" class="logo-text">Garimpo<span>Certo</span></span>
+            </a>
+            <nav>
+                <a href="#ofertas">Achados</a>
+                <a href="#guias">Guias de Compra</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>A gente garimpa as melhores ofertas para você não perder dinheiro</h2>
+            <p>Produtos bem avaliados, custo-benefício real e links diretos verificados no Mercado Livre.</p>
+            
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="O que você está procurando hoje? (ex: fone, teclado, casa)...">
+            </div>
+
+            <div class="filters" id="categoryFilters">
+                <button class="filter-btn active" data-category="todos">Todos os Achados</button>
+                <button class="filter-btn" data-category="tech">Tecnologia & Setup</button>
+                <button class="filter-btn" data-category="casa">Casa & Ferramentas</button>
+                <button class="filter-btn" data-category="esporte">Esporte & Saúde</button>
+                <button class="filter-btn" data-category="beleza">Beleza & Cuidado</button>
+            </div>
+        </div>
+    </section>
+
+    <main class="container" id="ofertas">
+        <div class="section-header">
+            <h3>Destaques Garimpados</h3>
+            <span id="productCount">Mostrando ofertas</span>
+        </div>
+        <div class="products-grid" id="productsGrid">
+            <!-- Os cards são gerados automaticamente pelo script.js -->
+        </div>
+    </main>
+
+    <section class="articles-section container" id="guias">
+        <h3>Guias e Análises do Garimpo</h3>
+        <div class="articles-grid">
+            <article class="article-card">
+                <span class="tag">Guia de Compra</span>
+                <h4>Os 3 melhores fones Bluetooth custo-benefício para comprar sem erro</h4>
+                <p>Comparamos bateria, conforto e qualidade de som dos modelos mais vendidos.</p>
+                <a href="artigo.html" class="read-more">Ler análise completa &rarr;</a>
+            </article>
+            <article class="article-card">
+                <span class="tag">Automação</span>
+                <h4>Como deixar sua casa inteligente gastando pouco</h4>
+                <p>Os itens essenciais para controlar luzes e tomadas pelo celular ou voz.</p>
+                <a href="artigo.html" class="read-more">Ler análise completa &rarr;</a>
+            </article>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p class="disclaimer">
+                <strong>Transparência Garimpo Certo:</strong> Participamos do Programa de Afiliados do Mercado Livre. 
+                Ao comprar através dos nossos links, podemos receber uma comissão sem que você pague nada a mais por isso.
+            </p>
+            <p class="copyright">&copy; 2026 Garimpo Certo - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
