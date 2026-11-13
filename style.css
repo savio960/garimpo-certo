@@ -1,10 +1,10 @@
 :root {
-    --primary: #1e293b;      /* Azul grafite moderno */
-    --accent: #ffe600;       /* Amarelo oferta */
-    --btn-bg: #2563eb;       /* Azul ação */
-    --btn-hover: #1d4ed8;
-    --vip-bg: #16a34a;       /* Verde WhatsApp/VIP */
-    --vip-hover: #15803d;
+    --primary: #1e293b;
+    --accent: #ffe600;
+    --ml-color: #2563eb;      /* Azul Mercado Livre */
+    --ml-hover: #1d4ed8;
+    --shopee-color: #ee4d2d;  /* Laranja Shopee */
+    --shopee-hover: #d73211;
     --bg-light: #f8fafc;
     --text-dark: #1e293b;
     --text-muted: #64748b;
@@ -54,7 +54,7 @@ body {
 }
 
 .site-logo {
-    height: 40px; /* Ajuste a altura da sua logo aqui se precisar */
+    height: 40px;
     width: auto;
     object-fit: contain;
 }
@@ -67,10 +67,6 @@ body {
 }
 
 .logo-text span {
-    color: var(--accent);
-}
-
-.logo span {
     color: var(--accent);
 }
 
@@ -91,26 +87,18 @@ body {
     color: var(--accent);
 }
 
-.nav-vip {
-    background-color: var(--vip-bg);
-    color: var(--white) !important;
-    padding: 6px 14px;
-    border-radius: 6px;
-    font-weight: 700 !important;
-}
-
 /* Hero */
 .hero {
     background-color: var(--white);
-    padding: 45px 0 35px;
+    padding: 40px 0 32px;
     text-align: center;
     border-bottom: 1px solid #e2e8f0;
     margin-bottom: 35px;
 }
 
 .hero h2 {
-    font-size: 2rem;
-    max-width: 750px;
+    font-size: 1.95rem;
+    max-width: 760px;
     margin: 0 auto 12px;
     color: var(--primary);
     line-height: 1.25;
@@ -118,8 +106,8 @@ body {
 
 .hero p {
     color: var(--text-muted);
-    margin-bottom: 25px;
-    font-size: 1.05rem;
+    margin-bottom: 24px;
+    font-size: 1.02rem;
 }
 
 .search-box input {
@@ -134,25 +122,63 @@ body {
 }
 
 .search-box input:focus {
-    border-color: var(--btn-bg);
+    border-color: var(--primary);
 }
 
-.filters {
-    margin-top: 22px;
+/* Filtros de Loja */
+.store-filters {
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     gap: 10px;
     flex-wrap: wrap;
 }
 
-.filter-btn {
-    padding: 8px 16px;
-    border: 1px solid #cbd5e1;
+.store-btn {
+    padding: 8px 18px;
+    border: 2px solid #cbd5e1;
     background: var(--white);
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    transition: all 0.2s;
+}
+
+.store-btn.active {
+    background-color: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+}
+
+.store-btn.ml-btn.active {
+    background-color: var(--ml-color);
+    border-color: var(--ml-color);
+}
+
+.store-btn.shopee-btn.active {
+    background-color: var(--shopee-color);
+    border-color: var(--shopee-color);
+}
+
+/* Filtros de Categoria */
+.filters {
+    margin-top: 14px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 6px 14px;
+    border: 1px solid #cbd5e1;
+    background: #f8fafc;
     border-radius: 20px;
     cursor: pointer;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--text-muted);
     transition: all 0.2s;
 }
@@ -214,17 +240,38 @@ body {
     flex-grow: 1;
 }
 
+.badges-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
 .product-badge {
-    display: inline-block;
-    width: fit-content;
     font-size: 0.72rem;
     text-transform: uppercase;
-    background: #eff6ff;
-    color: var(--btn-bg);
+    background: #f1f5f9;
+    color: var(--text-muted);
     padding: 3px 8px;
     border-radius: 4px;
     font-weight: 700;
-    margin-bottom: 8px;
+}
+
+.store-tag {
+    font-size: 0.72rem;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 4px;
+    color: var(--white);
+}
+
+.store-tag.mercadolivre {
+    background-color: var(--ml-color);
+}
+
+.store-tag.shopee {
+    background-color: var(--shopee-color);
 }
 
 .product-title {
@@ -244,7 +291,6 @@ body {
 .btn-buy {
     display: block;
     text-align: center;
-    background-color: var(--btn-bg);
     color: var(--white);
     text-decoration: none;
     padding: 12px;
@@ -254,52 +300,20 @@ body {
     transition: background-color 0.2s;
 }
 
-.btn-buy:hover {
-    background-color: var(--btn-hover);
+.btn-buy.mercadolivre {
+    background-color: var(--ml-color);
 }
 
-/* Banner VIP */
-.vip-banner {
-    margin-bottom: 50px;
+.btn-buy.mercadolivre:hover {
+    background-color: var(--ml-hover);
 }
 
-.vip-content {
-    background: var(--primary);
-    color: var(--white);
-    padding: 30px;
-    border-radius: 14px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
+.btn-buy.shopee {
+    background-color: var(--shopee-color);
 }
 
-.vip-content h3 {
-    color: var(--accent);
-    font-size: 1.35rem;
-    margin-bottom: 6px;
-}
-
-.vip-content p {
-    color: #cbd5e1;
-    max-width: 620px;
-    font-size: 0.95rem;
-}
-
-.btn-vip {
-    background-color: var(--vip-bg);
-    color: var(--white);
-    text-decoration: none;
-    padding: 14px 24px;
-    border-radius: 8px;
-    font-weight: 700;
-    white-space: nowrap;
-    transition: background-color 0.2s;
-}
-
-.btn-vip:hover {
-    background-color: var(--vip-hover);
+.btn-buy.shopee:hover {
+    background-color: var(--shopee-hover);
 }
 
 /* Artigos */
@@ -347,7 +361,7 @@ body {
 }
 
 .read-more {
-    color: var(--btn-bg);
+    color: var(--ml-color);
     text-decoration: none;
     font-weight: 700;
     font-size: 0.92rem;
@@ -362,7 +376,7 @@ body {
 .back-link {
     display: inline-block;
     margin-bottom: 20px;
-    color: var(--btn-bg);
+    color: var(--ml-color);
     text-decoration: none;
     font-weight: 600;
 }
@@ -388,7 +402,7 @@ body {
 
 .highlight-box {
     background: #f8fafc;
-    border-left: 4px solid var(--btn-bg);
+    border-left: 4px solid var(--ml-color);
     padding: 20px;
     border-radius: 0 8px 8px 0;
     margin-bottom: 25px;
