@@ -1,10 +1,9 @@
 // ==========================================================================
-// CATÁLOGO GARIMPO CERTO - MERCADO LIVRE & SHOPEE
-// Para adicionar um produto da Shopee, basta copiar um bloco { ... }
-// e colocar: loja: "shopee"
+// CATÁLOGO GARIMPO CERTO - MERCADO LIVRE (12) + SHOPEE (6)
 // ==========================================================================
 
 const produtos = [
+    // --- MERCADO LIVRE ---
     {
         id: 1,
         loja: "mercadolivre",
@@ -124,20 +123,69 @@ const produtos = [
         descricao: "Alta concentração de proteínas por dose para recuperação muscular e ganho de massa magra.",
         imagem: "https://http2.mlstatic.com/D_NQ_NP_2X_809217-MLA113731936580_072026-F.webp",
         linkAfiliado: "https://meli.la/2hzASUq"
-    }
+    },
 
-    /* QUANDO QUISER ADICIONAR UM PRODUTO DA SHOPEE, REMOVA O /* E * / E PREENCHA:
-    ,{
+    // --- SHOPEE (PREENCHA OS TÍTULOS E CATEGORIAS DOS 6 ITENS ABAIXO) ---
+    {
         id: 13,
         loja: "shopee",
-        titulo: "Nome do Produto da Shopee",
-        categoria: "casa",
-        categoriaNome: "Casa & Ferramentas",
-        descricao: "Descrição curta e persuasiva do produto.",
-        imagem: "COLE_AQUI_O_LINK_DA_IMAGEM_DA_SHOPEE",
-        linkAfiliado: "https://s.shopee.com.br/SEU_LINK_AQUI"
+        titulo: "Creatina Monohidratada Pura 300g Dark Lab - 100% Pura",
+        categoria: "Suplementos Alimentares", 
+        categoriaNome: "Saúde",
+        descricao: "A Creatina Pura Monohidratada Dark Lab entrega máxima força, explosão muscular e recuperação rápida para quem leva o treino a sério. Além de reconhecida pelos seus altos padrões de pureza e laudos certificados, ela acaba de conquistar o topo do mercado: foi eleita pela Euromonitor International como a creatina mais vendida da América Latina.",
+        imagem: "https://down-br.img.susercontent.com/file/br-11134207-820l8-ms0du9lcw8p1d3.webp",
+        linkAfiliado: "https://s.shopee.com.br/20wztsmTVp"
+    },
+    {
+        id: 14,
+        loja: "shopee",
+        titulo: "Kit Estética Automotiva Vonixx V-Floc Tok Final Intense 240ml Pneu Pretinho Pano Pincel E Aplicador",
+        categoria: "Limpeza Veicular",
+        categoriaNome: "Acessórios para Veículos",
+        descricao: "Quer deixar seu carro com aquele aspecto de acabou de sair do salão gastando pouco e fazendo você mesmo? Este combo reúne os campeões de venda da Vonixx com os acessórios ideais para uma aplicação perfeita.",
+        imagem: "https://down-br.img.susercontent.com/file/br-11134207-820lt-mqhpbloq1q0x0e_tn",
+        linkAfiliado: "https://s.shopee.com.br/5fqIGhSEad"
+    },
+    {
+        id: 15,
+        loja: "shopee",
+        titulo: "ROMANTIC CROWN Copo Térmico Inox Portátil 1200ml/600ml/1.2L Garrafa Térmica Inoxidável com Tampa e Canudo",
+        categoria: "Garrafas de Água e Acessórios",
+        categoriaNome: "Casa e Construção",
+        descricao: "Romantic Crown Copo Térmico tem capacidade de até 40 onças, sendo perfeito para quem precisa beber bastante de suas bebidas. Se você prefere um copo de café gelado, um refrescante chá gelado ou uma sopa quente e substancial, refrigerantes, água ou leite, este copo é a sua escolha ideal.",
+        imagem: "https://down-br.img.susercontent.com/file/br-11134207-820mc-mqgyizs7nv28ca@resize_w450_nl.webp",
+        linkAfiliado: "https://s.shopee.com.br/7KyWFx3qId"
+    },
+    {
+        id: 16,
+        loja: "shopee",
+        titulo: "Air Fryer Fritadeira Elétrica Digital Extream 4,3L",
+        categoria: "Air Fryers",
+        categoriaNome: "Eletrodomésticos",
+        descricao: "Descubra uma nova forma de preparar suas refeições favoritas com a Air Fryer Super Hot Extream! Com um design moderno e funcional, esta Air Fryer é a escolha ideal para quem busca uma alimentação mais saudável sem abrir mão do sabor e da praticidade.",
+        imagem: "https://down-br.img.susercontent.com/file/br-11134207-81z1k-mid7bqa04jk1a0@resize_w450_nl.webp",
+        linkAfiliado: "https://s.shopee.com.br/8VATe9XJnh"
+    },
+    {
+        id: 17,
+        loja: "shopee",
+        titulo: "Kit 20 Potes Herméticos 2,3litros 1,1litro 480ml Organização",
+        categoria: "Armazenamento de Alimentos",
+        categoriaNome: "Casa e Construção",
+        descricao: "Imagine abrir o armário da cozinha e ver tudo perfeitamente organizado em potes transparentes e uniformes? Com potes herméticos, você consegue manter um visual harmonioso e organizado, sabendo exatamente onde está cada ingrediente, sem o caos das embalagens.",
+        imagem: "https://down-br.img.susercontent.com/file/br-11134207-820ld-mp8722qtssg1d3_tn",
+        linkAfiliado: "https://s.shopee.com.br/1qdZhxZ9WR"
+    },
+    {
+        id: 18,
+        loja: "shopee",
+        titulo: "Óleo Finalizador Óleo Extraordinário, Anti Frizz, Protetor Térmico, L'Oréal Paris Elseve 100ml",
+        categoria: "Tratamento Capilar",
+        categoriaNome: "Beleza",
+        descricao: "bra o poder do Óleo Extraordinário Elseve de L'Oréal Paris, um leave in delicado que transforma e nutre todos os tipos de cabelo. Sua fórmula leve e não gordurosa é enriquecida com 6 óleos de flores preciosas, penetrando as fibras capilares para um tratamento profundo e brilho instantâneo.",
+        imagem: "https://down-br.img.susercontent.com/file/br-11134207-820lt-msof4dg2rnyc07@resize_w450_nl.webp",
+        linkAfiliado: "https://s.shopee.com.br/6fipSwie3r"
     }
-    */
 ];
 
 const productsGrid = document.getElementById('productsGrid');
