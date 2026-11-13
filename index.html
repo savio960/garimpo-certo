@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Garimpo Certo | Ofertas Selecionadas e Reviews Sinceros</title>
-    <meta name="description" content="Curadoria diária dos melhores produtos e ofertas reais no Mercado Livre. Economize tempo e compre com segurança.">
+    <title>Garimpo Certo | Melhores Achados do Mercado Livre e Shopee</title>
+    <meta name="description" content="Curadoria diária dos melhores produtos, cupons e ofertas reais no Mercado Livre e Shopee. Economize tempo e compre com segurança.">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,7 +12,6 @@
     <header class="navbar">
         <div class="container">
             <a href="index.html" class="logo-container">
-                <!-- Coloque sua logo na pasta 'assets/logo.png'. Se não existir ainda, aparece o texto abaixo -->
                 <img src="assets/logo.png" alt="Logo Garimpo Certo" class="site-logo" onerror="this.style.display='none'; document.getElementById('logoText').style.display='block';">
                 <span id="logoText" class="logo-text">Garimpo<span>Certo</span></span>
             </a>
@@ -25,15 +24,23 @@
 
     <section class="hero">
         <div class="container">
-            <h2>A gente garimpa as melhores ofertas para você não perder dinheiro</h2>
-            <p>Produtos bem avaliados, custo-benefício real e links diretos verificados no Mercado Livre.</p>
+            <h2>Os melhores achados do Mercado Livre e Shopee em um só lugar</h2>
+            <p>Produtos bem avaliados, custo-benefício real e links oficiais verificados todos os dias.</p>
             
             <div class="search-box">
-                <input type="text" id="searchInput" placeholder="O que você está procurando hoje? (ex: fone, teclado, casa)...">
+                <input type="text" id="searchInput" placeholder="Buscar produto (ex: fone, creatina, ferramentas)...">
             </div>
 
+            <!-- Filtro por Loja -->
+            <div class="store-filters" id="storeFilters">
+                <button class="store-btn active" data-store="todas">Todas as Lojas</button>
+                <button class="store-btn ml-btn" data-store="mercadolivre">Mercado Livre</button>
+                <button class="store-btn shopee-btn" data-store="shopee">Shopee</button>
+            </div>
+
+            <!-- Filtro por Categoria -->
             <div class="filters" id="categoryFilters">
-                <button class="filter-btn active" data-category="todos">Todos os Achados</button>
+                <button class="filter-btn active" data-category="todos">Todas as Categorias</button>
                 <button class="filter-btn" data-category="tech">Tecnologia & Setup</button>
                 <button class="filter-btn" data-category="casa">Casa & Ferramentas</button>
                 <button class="filter-btn" data-category="esporte">Esporte & Saúde</button>
@@ -53,7 +60,7 @@
     </main>
 
     <section class="articles-section container" id="guias">
-        <h3>Guias e Análises do Garimpo</h3>
+        <h3>Guias e Comparativos do Garimpo</h3>
         <div class="articles-grid">
             <article class="article-card">
                 <span class="tag">Guia de Compra</span>
@@ -62,9 +69,9 @@
                 <a href="artigo.html" class="read-more">Ler análise completa &rarr;</a>
             </article>
             <article class="article-card">
-                <span class="tag">Automação</span>
-                <h4>Como deixar sua casa inteligente gastando pouco</h4>
-                <p>Os itens essenciais para controlar luzes e tomadas pelo celular ou voz.</p>
+                <span class="tag">Casa Inteligente</span>
+                <h4>Itens baratos da Shopee e Mercado Livre para modernizar sua casa</h4>
+                <p>Pequenos acessórios que facilitam a rotina sem pesar no bolso.</p>
                 <a href="artigo.html" class="read-more">Ler análise completa &rarr;</a>
             </article>
         </div>
@@ -73,8 +80,8 @@
     <footer>
         <div class="container">
             <p class="disclaimer">
-                <strong>Transparência Garimpo Certo:</strong> Participamos do Programa de Afiliados do Mercado Livre. 
-                Ao comprar através dos nossos links, podemos receber uma comissão sem que você pague nada a mais por isso.
+                <strong>Transparência Garimpo Certo:</strong> Participamos dos programas de afiliados do Mercado Livre e da Shopee. 
+                Ao clicar nos links e realizar uma compra, podemos receber uma comissão sem que você pague nada a mais por isso.
             </p>
             <p class="copyright">&copy; 2026 Garimpo Certo - Todos os direitos reservados.</p>
         </div>
